@@ -6,7 +6,7 @@ const Main = () => {
     const queryCategories = useMoralisQuery("Categories");
     const fetchedCategories = JSON.parse(JSON.stringify(queryCategories.data, ["categoryId", "category"]));
 
-    console.log(fetchedCategories)
+    console.log("fetchedCategories", fetchedCategories)
     return (
         <div className="container">
             <div style={{
@@ -18,6 +18,7 @@ const Main = () => {
                 width: "100%",
                 gap: "20px",
                 }}>
+
                 <Categories categories={fetchedCategories}/>
                 <Feed/>
             </div>
